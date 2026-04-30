@@ -1,150 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rayhan Hossen | Portfolio</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Typing Effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 transition duration-500" id="body">
 
   <!-- Header -->
-  <header class="bg-white shadow p-6 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">RAYHAN HOSSEN</h1>
-    <nav class="space-x-4 text-sm">
-      <a href="#about" class="hover:text-blue-500">About</a>
-      <a href="#experience" class="hover:text-blue-500">Experience</a>
-      <a href="#skills" class="hover:text-blue-500">Skills</a>
-      <a href="#projects" class="hover:text-blue-500">Projects</a>
-      <a href="#education" class="hover:text-blue-500">Education</a>
-      <a href="#contact" class="hover:text-blue-500">Contact</a>
-    </nav>
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
+      <h1 class="font-bold text-xl">Rayhan</h1>
+
+      <nav class="space-x-4 hidden md:block">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Dark Mode -->
+      <button onclick="toggleDark()" class="bg-gray-200 px-3 py-1 rounded">🌙</button>
+    </div>
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-    <h2 class="text-4xl font-bold">Building Scalable Web Applications</h2>
-    <p class="mt-4">Mirpur, Dhaka</p>
-    <p class="mt-2">📞 <a href="tel:+8801775050422" class="underline">+8801775050422</a> | ✉️ <a
-        href="mailto:rrrayhan273@gmail.com" class="underline">rrrayhan273@gmail.com</a></p>
-    <p class="mt-2">
-      GitHub: <a href="https://github.com/rayhanGIT7" target="_blank" class="underline">rayhanGIT7</a> |
-      LinkedIn: <a href="https://linkedin.com/in/rayhan-hossen-76800429a" target="_blank"
-        class="underline">rayhan-hossen</a>
-    </p>
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-600 to-blue-700 text-white">
+    <h2 class="text-4xl font-bold">Hi, I'm Rayhan 👋</h2>
+    <h3 class="text-xl mt-3">
+      <span id="typing"></span>
+    </h3>
+
+    <p class="mt-4">Backend Developer | PHP | Laravel</p>
+
+    <div class="mt-6 space-x-4">
+      <a href="#projects" class="bg-white text-blue-600 px-4 py-2 rounded">View Work</a>
+      <a href="#" class="border px-4 py-2 rounded">Download CV</a>
+    </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="p-10 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Career Objective</h2>
+  <section id="about" class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
     <p>
-      Computer Science graduate skilled in PHP, JavaScript, and MySQL, seeking to build scalable web applications and
-      grow as a backend developer.
+      I am a passionate backend developer with real-world experience building scalable travel and booking systems.
+      I specialize in PHP & Laravel, API integrations, and payment gateway systems.
     </p>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="bg-white p-10">
-    <h2 class="text-3xl font-bold mb-6 text-center">Experience</h2>
+  <!-- Services -->
+  <section class="bg-white p-10" data-aos="fade-up">
+    <h2 class="text-3xl text-center font-bold mb-6">What I Do</h2>
 
-    <div class="max-w-4xl mx-auto space-y-6">
-      <div>
-        <h3 class="font-bold">Innovate Solutions – Software Engineer (Apr 2024 – Present)</h3>
-        <ul class="list-disc ml-6 text-sm mt-2">
-          <li>Engineered a scalable PHP/MySQL backend for a high-traffic travel portal, improving reliability and
-            handling
-            thousands of daily transactions.</li>
-          <li>Designed and integrated RESTful APIs for data exchange, reducing data-processing time and streamlining
-            system
-            communication.</li>
-          <li>Integrated four payment gateways (Mispay, Tranzila, ManyBag, Tamara) to enable secure, seamless online
-            transactions and increase payment success rates.</li>
-          <li>Built robust payment workflows (callbacks, validation, error handling) to ensure accuracy and error-free
-            processing of customer orders.</li>
-          <li>Developed admin panel features (user management, content control) that enhanced operational efficiency for
-            internal teams.</li>
-        </ul>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+      <div class="p-6 shadow rounded hover:scale-105 transition">
+        <h3 class="font-bold text-lg">Backend Development</h3>
+        <p>Build scalable APIs and systems using PHP & Laravel.</p>
       </div>
-      <div>
-        <h3 class="font-bold">Business Automation Ltd – Intern (Jan 2024 – Mar 2024)</h3>
-        <ul class="list-disc ml-6 text-sm mt-2">
-          <li>Contributed to backend development in Laravel, implementing new features and optimizing database queries
-            for
-            better performance.</li>
-          <li>Collaborated on API integrations and system testing, improving application stability and data accuracy.
-          </li>
-        </ul>
+
+      <div class="p-6 shadow rounded hover:scale-105 transition">
+        <h3 class="font-bold text-lg">API Integration</h3>
+        <p>Payment gateways, travel APIs, third-party services.</p>
       </div>
+
+      <div class="p-6 shadow rounded hover:scale-105 transition">
+        <h3 class="font-bold text-lg">Database Optimization</h3>
+        <p>Efficient MySQL queries and performance tuning.</p>
+      </div>
+
     </div>
-
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="p-10">
-    <h2 class="text-3xl font-bold mb-4 text-center">Technical Skills</h2>
+  <section id="skills" class="p-10 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6">Skills</h2>
+
     <div class="flex flex-wrap justify-center gap-4">
-      <span class="bg-blue-100 px-4 py-2 rounded">C</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">C++</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">PHP</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">Laravel</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">MySQL</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">HTML</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">CSS</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">JavaScript</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">Bootstrap</span>
-      <span class="bg-blue-100 px-4 py-2 rounded">Postman</span>
+      <span class="skill">PHP</span>
+      <span class="skill">Laravel</span>
+      <span class="skill">MySQL</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">REST API</span>
+      <span class="skill">Git</span>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="bg-white p-10">
-    <h2 class="text-3xl font-bold mb-6 text-center">Projects</h2>
+  <section id="projects" class="bg-white p-10" data-aos="fade-up">
+    <h2 class="text-3xl text-center font-bold mb-6">Projects</h2>
+
     <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="bg-gray-100 p-4 rounded shadow">
-        <h3 class="font-bold">Household Materials Transfer System</h3>
-        <p class="text-sm"><strong>Technologies:</strong> PHP, MySQL, JavaScript</p>
-        <p class="text-sm">A web app to manage household inventory transfers, automating request tracking and stock
-          updates.
-          Implemented forms, notifications, and reporting to reduce manual errors and improve efficiency.</p>
+
+      <div class="card">
+        <h3>Travel Booking System</h3>
+        <p>High-traffic booking system with payment gateway integration.</p>
       </div>
-      <div class="bg-gray-100 p-4 rounded shadow">
-        <h3 class="font-bold">Doctor Appointment System</h3>
-        <p class="text-sm"><strong>Technologies:</strong> PHP, MySQL, JavaScript</p>
-        <p class="text-sm">A scheduling platform for medical appointments, featuring calendar integration and automated
-          email reminders. Streamlined booking workflows and enhanced patient-doctor communication efficiency.</p>
+
+      <div class="card">
+        <h3>Doctor Appointment</h3>
+        <p>Online booking system with notifications & scheduling.</p>
       </div>
-      <div class="bg-gray-100 p-4 rounded shadow">
-        <h3 class="font-bold">Company Portfolio</h3>
-        <p class="text-sm"><strong>Technologies:</strong> Laravel, AJAX, jQuery</p>
-        <p class="text-sm">A corporate website built with Laravel for dynamic content updates. Used AJAX and jQuery for
-          seamless page interactions, and created a custom backend for easy content management.</p>
+
+      <div class="card">
+        <h3>Material Transfer</h3>
+        <p>Logistics system with tracking and automation.</p>
       </div>
+
     </div>
-
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="p-10 text-center">
-    <h2 class="text-3xl font-bold mb-4">Education</h2>
-    <p>BSc in Computer Science & Engineering – Varendra University (2019–2023)</p>
-    <p class="mt-2">Languages: Bangla | English | Hindi</p>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="bg-gray-900 text-white p-10 text-center">
     <h2 class="text-3xl font-bold mb-4">Contact</h2>
-    <p>01775050422</p>
-    <p>rrrayhan273@gmail.com</p>
-    <p>Mirpur, Dhaka</p>
+    <p>📞 01775050422</p>
+    <p>✉️ rrrayhan273@gmail.com</p>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center p-4 bg-white">
-    <p>&copy; 2026 RAYHAN HOSSEN. All rights reserved.</p>
+  <footer class="text-center p-4">
+    <p>© 2026 Rayhan Hossen</p>
   </footer>
 
-</body>
+  <!-- Styles -->
+  <style>
+    .skill {
+      background: #dbeafe;
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
 
+    .card {
+      background: #f3f4f6;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dark {
+      background: #111;
+      color: white;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+
+    // Typing
+    new Typed("#typing", {
+      strings: ["Backend Developer", "Laravel Expert", "API Specialist"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+    // Dark Mode
+    function toggleDark() {
+      document.getElementById("body").classList.toggle("dark");
+    }
+  </script>
+
+</body>
 </html>
